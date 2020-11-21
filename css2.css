@@ -1,84 +1,83 @@
-#wrap__toggle {
-opacity: 0;
+html{
+    height: 100%;
+    font-size: 18px;
 }
-.wrap__btn {
-display: flex;
-align-items: center;
-position: fixed;
-top: 20px;
-left: 20px;
-width: 26px;
-height: 26px;
-cursor: pointer;
-z-index: 1;
+
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.wrap__btn > span,
-.wrap__btn > span::before,
-.wrap__btn > span::after {
-display: block;
-position: absolute;
-width: 100%;
-height: 2px;
-background-color: #616161;
+nav{
+    background: #4c3167;
 }
-.wrap__btn > span::before {
-content: '';
-top: -8px;
+.menu li{
+    float: left;
 }
-.wrap__btn > span::after {
-content: '';
-top: 8px;
+.menu li a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
 }
-.wrap__box {
-display: block;
-position: fixed;
-visibility: hidden;
-top: 0;
-left: -100%;
-width: 300px;
-height: 100%;
-margin: 0;
-padding: 80px 0;
-list-style: none;
-text-align: center;
-background-color: #ECEFF1;
-box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+section{
+    padding-top: 10px;
 }
-.wrap__item {
-display: block;
-padding: 12px 24px;
-color: #333;
-font-family: 'Roboto', sans-serif;
-font-size: 20px;
-font-weight: 600;
-text-decoration: none;
+
+.wrapper{
+    max-width: 1024px;
+    padding: 0 30px;
+    margin: 0 auto;
 }
-.wrap__item:hover {
-background-color: #CFD8DC;
+.b-content{
+    height: 100%;
+    background: #c1aaff;
+    color: #000;
 }
-#wrap__toggle:checked ~ .wrap__btn > span {
-transform: rotate(45deg);
+.menuToggle{
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
 }
-#wrap__toggle:checked ~ .wrap__btn > span::before {
-top: 0;
-transform: rotate(0);
+body{
+    height: 100%;
 }
-#wrap__toggle:checked ~ .wrap__btn > span::after {
-top: 0;
-transform: rotate(90deg);
+
+nav input{
+    display: none;
 }
-#wrap__toggle:checked ~ .wrap__box {
-visibility: visible;
-left: 0;
+nav label{
+    padding: 10px 15px;
+    color: #fff;
+    display: none;
 }
-.wrap__btn > span,
-.wrap__btn > span::before,
-.wrap__btn > span::after {
-transition-duration: .25s;
+@media ( max-width: 670px) {
+    nav label{
+        display: block;
+    }
+
+    #menuToggle:checked + .menu{
+        display: block;
+        position: absolute;
+        background: #4c3167;
+        width: 100%;
+        margin-left: -30px;
+        padding-left: 28px;
+    }
+    .menu li{
+        float: none;
+    }
+    .menu{
+        display: none;
+    }
 }
-.wrap__box {
-transition-duration: .25s;
-}
-.wrap__item {
-transition-duration: .25s;
-}
+#menuToggle:checked + .menu{
+      display: block;
+      position: absolute;
+      background: #4c3167;
+      width: 100%;
+      margin-left: -30px;
+      padding-left: 28px;
+  }
